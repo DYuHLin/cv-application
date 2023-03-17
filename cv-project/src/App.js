@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './styles/App.css';
 
 class App extends Component {
   constructor(){
@@ -11,8 +12,22 @@ class App extends Component {
 
   render(){
     return (
-      <div>
-  
+      <div className='container'>
+        <div className='header'>
+          <div className='title'>CV Creator</div>
+          <div className='link'></div>
+        </div>
+        <div className='body'>
+          <div className='form'>
+            <form>
+
+            </form>
+          </div>
+    
+          <div className='preview'>
+
+          </div>
+        </div>
       </div>
     );
   };
