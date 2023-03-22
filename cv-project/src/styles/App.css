@@ -20,6 +20,7 @@
 
 .title{
     font-size: 28px;
+    padding-left: 18px;
 }
 
 .body{
@@ -52,4 +53,58 @@ fieldset{
     display: flex;
     flex-direction: column;
     padding: 12px;
+}
+
+.res-content{
+    padding: 16px;
+}
+
+.personal{
+    margin-bottom: 14px;
+}
+
+.name-surname{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.res-pos{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.res-desc{
+    margin-bottom: 14px;
+}
+
+.res-edu{
+    margin-bottom: 14px;
+}
+
+.res-exp{
+    margin-bottom: 14px;
+}
+
+.exp-title{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.desc-title{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.edu-title{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+textarea{
+    resize: none;
+    height: 60px;
+}
+
+button{
+    margin-top: 12px;
 }
