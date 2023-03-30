@@ -100,6 +100,11 @@ fieldset{
     font-size: 28px;
 }
 
+.edu-dates, .exp-dates{
+    display: flex;
+    gap: 16px;
+}
+
 textarea{
     resize: none;
     height: 60px;

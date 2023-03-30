@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Display from './Display';
+import General from './General';
 
 class Buttons extends Component {
     constructor(props){
@@ -6,12 +8,17 @@ class Buttons extends Component {
     };
 
     render(){
-        const {title} = this.props;
         return(
             <>
               <button type='submit'>Submit</button>
               <button>Edit</button>
               <button>Download PDF</button>
+
+              <Display
+              general = {this.props.general} 
+              educations = {this.props.educations} 
+              experiences = {this.props.experiences}
+              /> 
             </>
         );
     };

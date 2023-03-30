@@ -1,34 +1,55 @@
 import React, {Component} from 'react';
+import Display from './Display';
+import Education from './Education';
 
 class General extends Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
+        this.state = {
+            general:{
+            name: "",
+            role: "",
+            number: "",
+            address: "",
+            mail: "",
+            description: ""
+            } 
+    };
+};
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value,         
+        });
     };
 
     render(){
-        const {title} = this.props;
         return(
+            <>
             <fieldset>
                 <legend>Personal Information</legend>
                 <label for = 'name'>Name and Surname: </label>
-                <input  id='name' type = 'text' />
+                <input onChange={this.handleChange} value = {this.name}  id='name' type = 'text' />
 
                 <label for = 'title'>Title: </label>
-                <input  id='title' type = 'text' />
+                <input onChange={this.handleChange} value = {this.role}  id='role' type = 'text' />
 
                 <label for = 'number'>number: </label>
-                <input  id='number' type = 'text' />
+                <input onChange={this.handleChange} value = {this.number}  id='number' type = 'text' />
 
                 <label for = 'mail'>Email: </label>
-                <input  id='mail' type = 'email' />
+                <input onChange={this.handleChange} value = {this.mail}  id='mail' type = 'email' />
 
                 <label for = 'address'>Address: </label>
-                <input  id='address' type = 'text' alt='select image' />
+                <input onChange={this.handleChange} value = {this.address}  id='address' type = 'text' alt='select image' />
                 
                 <label for = 'desc'>Description: </label>
-                <textarea  id='desc' />
-
+                <textarea onChange={this.handleChange} value = {this.description} id='description' />
               </fieldset>
+               <Education 
+              general = {this.state} 
+              /> 
+            </>
         );
     };
 };
