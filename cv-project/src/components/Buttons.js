@@ -10,9 +10,10 @@ class Buttons extends Component {
     render(){
         return(
             <>
-              <button type='submit'>Submit</button>
-              <button>Edit</button>
-              <button>Download PDF</button>
+            <div className='buttons'>
+              <button className='reset-btn'>Reset</button>
+              <button className='pdf-btn'>Download PDF</button>
+            </div>
 
               <Display
               general = {this.props.general} 

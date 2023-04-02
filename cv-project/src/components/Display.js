@@ -56,6 +56,8 @@ class Display extends Component {
                     <div className='exp-company'>{this.props.experiences.company}</div>
                     <div className='exp-role'>{this.props.experiences.role}</div>
                   </div>
+                  <div className='desc-title'>Tasks/Responsibilities</div>
+                  
                   <div className='desc-detail'>
                   {this.props.experiences.desc}
                 </div>

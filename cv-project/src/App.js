@@ -12,12 +12,7 @@ class App extends Component {
 
    };
 
-   submitTask = (e) => {
-    e.preventDefault();
-};
-
   render(){
-    // const {general, generals, description, descriptions, education, educations, experience, experiences} = this.state;
     return (
       <div className='container'>
         <div className='header'>
@@ -26,14 +21,11 @@ class App extends Component {
         </div>
         <div className='body'>
           <div className='form'>
-            <form onSubmit={this.submitTask}>
+            <form>
               <General />
-              {/* <Education />  */}
-              {/* <Experience />  */}
-              {/* <Buttons />  */}
             </form>
           </div>
-          {/* <Display />         */}
+          
         </div>
       </div>
     );

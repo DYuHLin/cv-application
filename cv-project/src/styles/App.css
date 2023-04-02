@@ -25,7 +25,7 @@
 
 .body{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 12px;
 }
 
@@ -33,18 +33,22 @@
     display: flex;
     justify-content: center;
     width: 52%;
-    background-color: rgba(214, 213, 213, 0.623);
     border-radius: 6px;
     box-sizing: 0 -6px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .preview{
-    width: 45%;
-    height: 100%;
+
+    display: flex;
+
+    width: 100%;
     background-color: rgba(214, 213, 213, 0.623);
+    border-radius: 6px;
+    box-sizing: 0 -6px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 form{
+    background-color: rgba(214, 213, 213, 0.623);
     width: 100%;
     padding: 16px;
 }
@@ -53,6 +57,27 @@ fieldset{
     display: flex;
     flex-direction: column;
     padding: 12px;
+    border: none;
+}
+
+legend{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+input{
+    border-radius: 6px;
+    border: none;
+    padding: 6px;
+}
+
+label{
+    font-weight: 500;
+}
+
+textarea{
+    border-radius: 6px;
+    border: none;
 }
 
 .res-content{
@@ -113,3 +138,36 @@ textarea{
 button{
     margin-top: 12px;
 }
+
+.buttons{
+    display: flex;
+    margin-bottom: 18px;
+    gap: 14px;
+}
+
+.del-btn{
+    margin-bottom: 12px;
+    background-color: rgb(201, 79, 79);
+}
+
+.add-btn{
+    background-color: rgb(38, 155, 38);
+}
+
+.pdf-btn{
+    background-color: rgb(60, 60, 233);
+}
+
+.reset-btn{
+    background-color: rgb(248, 165, 12);
+}
+
+.add-btn, .del-btn, .pdf-btn, .reset-btn{
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+
