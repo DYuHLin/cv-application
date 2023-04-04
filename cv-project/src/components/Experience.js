@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Buttons from './Buttons';
+import ExperiencePiece from './ExperiencePiece';
 
 class Experience extends Component {
     constructor(props){
@@ -11,7 +12,9 @@ class Experience extends Component {
                        start: '',
                        end: '',
                        desc: '',
+                       num: 0,
             },
+            jobs: []
         };
     };
 
@@ -21,11 +24,30 @@ handleChange = (e) => {
     });
 };
 
+incEdu = (e) => {
+    e.preventDefault(e);
+    const fieldContainer = document.getElementById("fields");
+    this.setState({
+        experiences: {
+            num: this.state.experiences.num + 1,
+        }
+    });
+    
+};
+
     render(){
+        const expField = [];
+        console.log(this.state.experiences.num);
+        for(let i = 0; i < this.state.experiences.num; i +=1){
+            expField.push(<ExperiencePiece />)
+            console.log(expField);
+        }
         return(
             <>
             <fieldset>
                 <legend>Experience</legend>
+                <div className='fields'>
+                 <fieldset>
                     <label for = 'company'>Company: </label>
                     <input onChange={this.handleChange} value = {this.company}  id='company' type = 'text'></input>
 
@@ -40,7 +62,12 @@ handleChange = (e) => {
 
                     <label for = 'exp'>Tasks/Responsibilities: </label>
                     <textarea onChange={this.handleChange} value = {this.desc} id='desc' />
-
+                    
+                </fieldset> 
+                {expField}
+                </div>
+                
+                <button onClick={this.incEdu} className="add-btn">Add</button>
               </fieldset>
               
               <Buttons 

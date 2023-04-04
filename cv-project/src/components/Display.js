@@ -32,6 +32,7 @@ class Display extends Component {
                 <div className='edu-detail'>
                   <div className='edu-dates'>
                     <div className='edu-date'>{this.props.educations.startDate}</div>
+                    <div>-</div>
                     <div className='edu-date'>{this.props.educations.endDate}</div>
                   </div>
   
@@ -49,6 +50,7 @@ class Display extends Component {
                 <div className='exp-detail'>
                   <div className='exp-dates'>
                     <div className='exp-date'>{this.props.experiences.start}</div>
+                    <div>-</div>
                     <div className='exp-date'>{this.props.experiences.end}</div>
                   </div>
                   
