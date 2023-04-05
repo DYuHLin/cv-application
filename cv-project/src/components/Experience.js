@@ -39,15 +39,15 @@ incEdu = (e) => {
         const expField = [];
         console.log(this.state.experiences.num);
         for(let i = 0; i < this.state.experiences.num; i +=1){
-            expField.push(<ExperiencePiece />)
-            console.log(expField);
+            expField.push(<ExperiencePiece id = {i} />)
+            // console.log(expField);
         }
         return(
             <>
             <fieldset>
                 <legend>Experience</legend>
                 <div className='fields'>
-                 <fieldset>
+                 <fieldset key="1">
                     <label for = 'company'>Company: </label>
                     <input onChange={this.handleChange} value = {this.company}  id='company' type = 'text'></input>
 
@@ -67,7 +67,7 @@ incEdu = (e) => {
                 {expField}
                 </div>
                 
-                <button onClick={this.incEdu} className="add-btn">Add</button>
+                {/* <button onClick={this.incEdu} className="add-btn">Add</button> */}
               </fieldset>
               
               <Buttons 

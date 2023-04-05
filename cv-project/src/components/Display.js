@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ExperienceDisplay from './Display/ExperienceDisplay';
 
 class Display extends Component {
   constructor(props){
@@ -6,6 +7,12 @@ class Display extends Component {
   };
 
     render(){
+      const expDisplay = [];
+      for(let i = 0; i < this.props.experiences.num; i+=1){
+        expDisplay.push(<ExperienceDisplay id = {i} />);
+      };
+
+      // console.log(this.props)
         return(
             <div className='preview'>
             <div className='res-content'>
@@ -48,15 +55,15 @@ class Display extends Component {
                 <div className='exp-title'>Experience</div>
 
                 <div className='exp-detail'>
-                  <div className='exp-dates'>
-                    <div className='exp-date'>{this.props.experiences.start}</div>
-                    <div>-</div>
-                    <div className='exp-date'>{this.props.experiences.end}</div>
-                  </div>
                   
                   <div className='exp-place'>
                     <div className='exp-company'>{this.props.experiences.company}</div>
                     <div className='exp-role'>{this.props.experiences.role}</div>
+                  </div>
+                  <div className='exp-dates'>
+                    <div className='exp-date'>{this.props.experiences.start}</div>
+                    <div>-</div>
+                    <div className='exp-date'>{this.props.experiences.end}</div>
                   </div>
                   <div className='desc-title'>Tasks/Responsibilities</div>
                   
@@ -64,6 +71,7 @@ class Display extends Component {
                   {this.props.experiences.desc}
                 </div>
                 </div>
+                {expDisplay}
               </div>
             </div>
               

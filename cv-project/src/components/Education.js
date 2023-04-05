@@ -36,7 +36,7 @@ class Education extends Component {
     };
     
     render(){
-        console.log(this.state.educations.num);
+        // console.log(this.state.educations.num);
         return(
             <>
             <fieldset id='educational'>
@@ -54,7 +54,7 @@ class Education extends Component {
                         <label for = 'edate'>End Date: </label>
                         <input onChange={this.handleChange} value = {this.end} id='endDate' type = 'text' placeholder='Year'></input>
                     </fieldset>
-                    <button onClick={this.incExp} className="add-btn">Add</button>
+                    {/* <button onClick={this.incExp} className="add-btn">Add</button> */}
               </fieldset>
                <Experience 
               general = {this.props.general} 

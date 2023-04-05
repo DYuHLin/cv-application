@@ -7,7 +7,7 @@ class ExperienceDisplay extends Component {
 
     render(){
         return(
-            <div className='exp-detail'>
+            <div id={this.props.id} className='exp-detail'>
                   <div className='exp-dates'>
                     <div className='exp-date'>{this.props.experiences.start}</div>
                     <div>-</div>
