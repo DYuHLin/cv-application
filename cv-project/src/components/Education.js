@@ -1,68 +1,57 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import Experience from './Experience';
 
-class Education extends Component {
-    constructor(props){
-        super(props);
+const Education = (props) => {
+    const educationFields = {
+        school: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+        num: 1
+        };
 
-        this.state = {
-            educations: {
-                school: '',
-                degree: '',
-                startDate: '',
-                endDate: '',
-                num: 1
-                }
-            };
-    };
+    const [educations, setEducation] = useState(educationFields);
 
-
-    handleChange = (e) => {
-        this.setState({
-
-            [e.target.id]: e.target.value,           
+    const handleChange = (e) => {
+        setEducation({
+            ...educations,[e.target.id]: e.target.value,           
         });
     };
 
-    incExp = (e) => {
-        e.preventDefault(e);
-        this.setState({
-            educations: {
-                num: this.state.educations.num + 1,
-            }
-            
-        });
-        
-    };
+    // incExp = (e) => {
+    //     e.preventDefault(e);
+            // educations: {
+            //     num: this.state.educations.num + 1,
+            // }      
+    // };
     
-    render(){
         // console.log(this.state.educations.num);
-        return(
-            <>
+    return(
+        <>
             <fieldset id='educational'>
                 <legend>Education</legend>
                     <fieldset>
                         <label for = 'school'>School: </label>
-                        <input onChange={this.handleChange} value = {this.school} id='school' type = 'text'></input>
+                        <input onChange={handleChange} value = {educations.school} id='school' type = 'text'></input>
 
                         <label for = 'field'>Degree: </label>
-                        <input onChange={this.handleChange} value = {this.degree}  id='degree' type = 'text'></input>
+                        <input onChange={handleChange} value = {educationFields.degree}  id='degree' type = 'text'></input>
 
                         <label for = 'sdate'>Start Date: </label>
-                        <input onChange={this.handleChange} value = {this.start}  id='startDate' type = 'text' placeholder='Year'></input>
+                        <input onChange={handleChange} value = {educationFields.start}  id='startDate' type = 'text' placeholder='Year'></input>
 
                         <label for = 'edate'>End Date: </label>
-                        <input onChange={this.handleChange} value = {this.end} id='endDate' type = 'text' placeholder='Year'></input>
+                        <input onChange={handleChange} value = {educationFields.end} id='endDate' type = 'text' placeholder='Year'></input>
                     </fieldset>
                     {/* <button onClick={this.incExp} className="add-btn">Add</button> */}
               </fieldset>
                <Experience 
-              general = {this.props.general} 
-              educations = {this.state} 
+              general = {props.general} 
+              educations = {educations} 
               /> 
             </>
         );
-    };
+    
 };
 
 export default Education;
