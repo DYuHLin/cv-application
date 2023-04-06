@@ -4,9 +4,9 @@ import Experience from './Experience';
 const Education = (props) => {
     const educationFields = {
         school: '',
-        degree: '',
         startDate: '',
         endDate: '',
+        degree: '',
         num: 1
         };
 
@@ -35,13 +35,13 @@ const Education = (props) => {
                         <input onChange={handleChange} value = {educations.school} id='school' type = 'text'></input>
 
                         <label for = 'field'>Degree: </label>
-                        <input onChange={handleChange} value = {educationFields.degree}  id='degree' type = 'text'></input>
+                        <input onChange={handleChange} value = {educations.degree}  id='degree' type = 'text'></input>
 
                         <label for = 'sdate'>Start Date: </label>
-                        <input onChange={handleChange} value = {educationFields.start}  id='startDate' type = 'text' placeholder='Year'></input>
+                        <input onChange={handleChange} value = {educations.start}  id='startDate' type = 'text' placeholder='Year'></input>
 
                         <label for = 'edate'>End Date: </label>
-                        <input onChange={handleChange} value = {educationFields.end} id='endDate' type = 'text' placeholder='Year'></input>
+                        <input onChange={handleChange} value = {educations.end} id='endDate' type = 'text' placeholder='Year'></input>
                     </fieldset>
                     {/* <button onClick={this.incExp} className="add-btn">Add</button> */}
               </fieldset>

@@ -8,7 +8,7 @@ const Display = (props) => {
         expDisplay.push(<ExperienceDisplay id = {i} />);
       };
 
-      // console.log(this.props)
+      console.log(props)
   return(
     <div className='preview'>
         <div className='res-content'>
