@@ -46,7 +46,14 @@ const updateExp = (index) => (e) => {
 
     setExperiences(newArr);
 };
-        //   console.log(experiences);
+
+const deleteExp = (index) => (e) => {
+    e.preventDefault();
+    setExperiences(oldValues => {
+        return oldValues.filter(exp => exp.id !== index)
+    });
+};
+        //    console.log(experiences);
 
         return(
             <>
@@ -70,7 +77,7 @@ const updateExp = (index) => (e) => {
                     
                                         <label for = 'exp'>Tasks/Responsibilities: </label>
                                         <textarea onChange={updateExp(index)} value={obj.desc} name='desc' />
-                                        <button className="del-btn">Delete</button>
+                                        <button onClick={deleteExp(obj.id)} className="del-btn">Delete</button>
                                     </fieldset>
                         );
                     })}

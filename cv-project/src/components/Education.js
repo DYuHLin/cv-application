@@ -45,8 +45,15 @@ const Education = (props) => {
     
         setEducation(newArr);
      };
+
+     const deleteExp = (index) => (e) => {
+        e.preventDefault();
+        setEducation(oldValues => {
+            return oldValues.filter(edu => edu.id !== index)
+        });
+    };
     
-        console.log(educations);
+         console.log(educations);
     return(
         <>
             <fieldset id='educational'>
@@ -66,7 +73,7 @@ const Education = (props) => {
 
                             <label for = 'edate'>End Date: </label>
                             <input onChange={updateEdu(index)} value = {obj.end} name='endDate' type = 'text' placeholder='Year'></input>
-                            <button className="del-btn">Delete</button>
+                            <button onClick={deleteExp(obj.id)} className="del-btn">Delete</button>
                     </fieldset>
                         )
                     })}
