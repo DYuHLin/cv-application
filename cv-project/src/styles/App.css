@@ -130,6 +130,20 @@ textarea{
 .edu-dates, .exp-dates{
     display: flex;
     gap: 16px;
+    margin-bottom: 10px;
+}
+
+.edu-details, .exp-details{
+    margin-bottom: 18px;
+}
+
+.exp-company, .exp-role, .edu-school, .edu-degree{
+    font-weight: 500;
+    font-size: 22px;
+} 
+
+.desc-detail{
+    margin-bottom: 12px;
 }
 
 textarea{
