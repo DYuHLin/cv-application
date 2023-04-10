@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
-import ExperienceDisplay from './Display/ExperienceDisplay';
+import React from 'react';
 
 const Display = (props) => {
 
-      const expDisplay = [];
-      for(let i = 0; i < props.experiences.num; i+=1){
-        expDisplay.push(<ExperienceDisplay id = {i} />);
-      };
+      // const expDisplay = [];
+      // for(let i = 0; i < props.experiences.num; i+=1){
+      //   expDisplay.push(<ExperienceDisplay id = {i} />);
+      // };
 
       console.log(props)
   return(
@@ -32,7 +31,7 @@ const Display = (props) => {
 
           <div className='res-edu'>
             <div className='edu-title'>Education</div>
-            <div className='edu-detail'>
+            {/* <div className='edu-detail'>
               <div className='edu-dates'>
                 <div className='edu-date'>{props.educations.startDate}</div>
                   <div>-</div>
@@ -43,31 +42,52 @@ const Display = (props) => {
                 <div className='edu-school'>{props.educations.school}</div>
                 <div className='edu-degree'>{props.educations.degree}</div>
               </div>
-            </div>
+            </div> */}
+
+            {props.educations.map((edu) => {
+              return(
+                <>
+                <div className='edu-detail'>
+                  <div className='edu-school'>
+                    <div className='edu-school'>{edu.school}</div>
+                    <div className='edu-degree'>{edu.degree}</div>
+                  </div>
+                  <div className='edu-dates'>
+                    <div className='edu-date'>{edu.startDate}</div>
+                      <div>-</div>
+                      <div className='edu-date'>{edu.endDate}</div>
+                  </div>
+                </div>
+                </>
+              )
+            })}
 
           </div>
 
           <div className='res-exp'>
             <div className='exp-title'>Experience</div>
-
             <div className='exp-detail'>
-                      
-              <div className='exp-place'>
-                <div className='exp-company'>{props.experiences.company}</div>
-                <div className='exp-role'>{props.experiences.role}</div>
-              </div>
-              <div className='exp-dates'>
-                <div className='exp-date'>{props.experiences.start}</div>
-                <div>-</div>
-                <div className='exp-date'>{props.experiences.end}</div>
-              </div>
-              <div className='desc-title'>Tasks/Responsibilities</div>
-                      
-              <div className='desc-detail'>
-                {props.experiences.desc}
-              </div>
+                  
+                  {props.experiences.map((exp) => {
+                    return( 
+                    <>
+                    <div className='exp-place'>
+                      <div className='exp-company'>{exp.company}</div>
+                      <div className='exp-role'>{exp.role}</div>
+                    </div>
+                    <div className='exp-dates'>
+                      <div className='exp-date'>{exp.start}</div>
+                      <div>-</div>
+                      <div className='exp-date'>{exp.end}</div>
+                    </div>
+                  <div className='desc-title'>Tasks/Responsibilities</div>
+                  
+                  <div className='desc-detail'>
+                    {exp.desc}
+                  </div>
+                  </>)
+                  })}          
             </div>
-              {expDisplay}
           </div>
       </div>
               
