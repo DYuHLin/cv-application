@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 
-const Display = (props) => {
+const Display = forwardRef((props, ref) => {
 
       // const expDisplay = [];
       // for(let i = 0; i < props.experiences.num; i+=1){
@@ -9,7 +9,7 @@ const Display = (props) => {
 
       console.log(props)
   return(
-    <div className='preview'>
+    <div ref={ref} className='preview'>
         <div className='res-content'>
           <div className='personal'>
             <div className='name-surname'>
@@ -92,7 +92,7 @@ const Display = (props) => {
       </div>
               
   </div>
-        );
-};
+  );
+});
 
 export default Display;
