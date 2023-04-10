@@ -1,59 +1,69 @@
 import React, {useState} from 'react';
 import Buttons from './Buttons';
-import ExperiencePiece from './ExperiencePiece';
+import uniqid from 'uniqid';
 
 const Experience = (props) => {
 
-//     experiences: {
-//         company: '',
-//         role: '',
-//         start: '',
-//         end: '',
-//         desc: '',
-//         num: 0,
-// },
-// jobs: []
-    const expFields = {
+    const jobs = [];
+    
+
+    const [experiences, setExperiences] = useState(jobs);
+
+    const handleChange = (e) => {
+    setExperiences({
+        // ...experiences, jobs: [id].id.target.id = id.target.value,
+        ...experiences.jobs, [e.target.id]: e.target.value,
+    });
+
+    
+};
+
+const incEdu = (e) => {
+    let num = 0;
+    e.preventDefault();
+    let obj = {
+        id: uniqid(),
         company: '',
         role: '',
         start: '',
         end: '',
         desc: '',
-        num: 0,
     };
 
-    const [experiences, setExperiences] = useState(expFields);
+    num += 1;
 
-    const handleChange = (e) => {
-    setExperiences({
-        ...experiences,[e.target.id]: e.target.value,
-    });
+    setExperiences(current => [...current, obj]);
+
+    obj = {
+        id: uniqid(),
+        company: '',
+        role: '',
+        start: '',
+        end: '',
+        desc: '',
+    };
 };
 
-const incEdu = (e) => {
-    e.preventDefault(e);
-    const fieldContainer = document.getElementById("fields");
-    setExperiences({
-        experiences: {
-            num: this.state.experiences.num + 1,
-        }
+const updateExp = (index) => (e) => {
+    const newArr = experiences.map((obj, i) => {
+        if(index === i){
+            return{...obj, [e.target.name]: e.target.value}
+        } else {
+            return obj;
+        };
+        
     });
-    
+
+    setExperiences(newArr);
 };
+          console.log(experiences);
 
-
-        const expField = [];
-        //  console.log(experiences.num);
-        for(let i = 0; i < experiences.num; i +=1){
-            expField.push(<ExperiencePiece id = {i} />)
-            // console.log(expField);
-        }
         return(
             <>
             <fieldset>
                 <legend>Experience</legend>
                 <div className='fields'>
-                    <fieldset key="1">
+                    {/* <fieldset key="1">
                         <label for = 'company'>Company: </label>
                         <input onChange={handleChange} value = {experiences.company}  id='company' type = 'text'></input>
 
@@ -69,11 +79,31 @@ const incEdu = (e) => {
                         <label for = 'exp'>Tasks/Responsibilities: </label>
                         <textarea onChange={handleChange} value = {experiences.desc} id='desc' />
                         
-                    </fieldset> 
-                    {expField}
+                    </fieldset>  */}
+                    {experiences.map((obj, index) => {
+                        return (
+                            <fieldset key={obj.id} id = {obj.id}>
+                                        <label for = 'company'>Company: </label>
+                                        <input onChange={updateExp(index)} value={obj.company}  name='company' type = 'text'></input>
+                    
+                                        <label for = 'role'>Role/Title: </label>
+                                        <input onChange={updateExp(index)} value={obj.role} name='role' type = 'text'></input>
+                    
+                                        <label for = 'sdate'>Start Date: </label>
+                                        <input onChange={updateExp(index)} value={obj.start} name='start' type = 'text' placeholder='Year'></input>
+                    
+                                        <label for = 'edate'>End Date: </label>
+                                        <input onChange={updateExp(index)} value={obj.end} name='end' type = 'text' placeholder='Year'></input>
+                    
+                                        <label for = 'exp'>Tasks/Responsibilities: </label>
+                                        <textarea onChange={updateExp(index)} value={obj.desc} name='desc' />
+                                        <button className="del-btn">Delete</button>
+                                    </fieldset>
+                        );
+                    })}
                 </div>
                 
-            {/* <button onClick={this.incEdu} className="add-btn">Add</button> */}
+            <button onClick={incEdu} className="add-btn">Add</button> 
             </fieldset>
               
             <Buttons 
