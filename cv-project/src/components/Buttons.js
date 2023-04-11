@@ -11,7 +11,6 @@ const Buttons = (props) => {
   return(
     <>
       <div className='buttons'>
-        <button className='reset-btn'>Reset</button>
         <button onClick={handlePrint} type='button' className='pdf-btn'>Download PDF</button>
         
       </div>

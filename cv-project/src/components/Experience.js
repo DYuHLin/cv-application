@@ -64,16 +64,16 @@ const deleteExp = (index) => (e) => {
                         return (
                             <fieldset key={obj.id} id = {obj.id}>
                                         <label for = 'company'>Company: </label>
-                                        <input onChange={updateExp(index)} value={obj.company}  name='company' type = 'text'></input>
+                                        <input onChange={updateExp(index)} value={obj.company}  name='company' type = 'text' required></input>
                     
                                         <label for = 'role'>Role/Title: </label>
-                                        <input onChange={updateExp(index)} value={obj.role} name='role' type = 'text'></input>
+                                        <input onChange={updateExp(index)} value={obj.role} name='role' type = 'text' required></input>
                     
                                         <label for = 'sdate'>Start Date: </label>
-                                        <input onChange={updateExp(index)} value={obj.start} name='start' type = 'text' placeholder='Year'></input>
+                                        <input onChange={updateExp(index)} value={obj.start} name='start' type = 'text' placeholder='Year' required></input>
                     
                                         <label for = 'edate'>End Date: </label>
-                                        <input onChange={updateExp(index)} value={obj.end} name='end' type = 'text' placeholder='Year'></input>
+                                        <input onChange={updateExp(index)} value={obj.end} name='end' type = 'text' placeholder='Year' required></input>
                     
                                         <label for = 'exp'>Tasks/Responsibilities: </label>
                                         <textarea onChange={updateExp(index)} value={obj.desc} name='desc' />

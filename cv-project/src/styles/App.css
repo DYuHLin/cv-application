@@ -16,6 +16,17 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+i{
+    font-size: 28px;
+    padding-right: 18px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
 
 .title{

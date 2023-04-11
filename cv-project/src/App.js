@@ -11,9 +11,13 @@ const App = () => {
 
     return (
     <div className='container'>
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       <div className='header'>
         <div className='title'>CV Creator</div>
-        <div className='link'></div>
+        <div className='link'>
+          <a href='https://github.com/DYuHLin/cv-application'><i class='bx bxl-github'></i></a>
+        
+        </div>
       </div>
       <div className='body'>
         <div className='form'>

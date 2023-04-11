@@ -63,16 +63,16 @@ const Education = (props) => {
                         return(
                         <fieldset key={obj.id} id={obj.id}>
                             <label for = 'school'>School: </label>
-                            <input onChange={updateEdu(index)} value = {obj.school} name='school' type = 'text'></input>
+                            <input onChange={updateEdu(index)} value = {obj.school} name='school' type = 'text' required></input>
 
                             <label for = 'field'>Degree: </label>
-                            <input onChange={updateEdu(index)} value = {obj.degree}  name='degree' type = 'text'></input>
+                            <input onChange={updateEdu(index)} value = {obj.degree}  name='degree' type = 'text' required></input>
 
                             <label for = 'sdate'>Start Date: </label>
-                            <input onChange={updateEdu(index)} value = {obj.start}  name='startDate' type = 'text' placeholder='Year'></input>
+                            <input onChange={updateEdu(index)} value = {obj.start}  name='startDate' type = 'text' placeholder='Year' required></input>
 
                             <label for = 'edate'>End Date: </label>
-                            <input onChange={updateEdu(index)} value = {obj.end} name='endDate' type = 'text' placeholder='Year'></input>
+                            <input onChange={updateEdu(index)} value = {obj.end} name='endDate' type = 'text' placeholder='Year' required></input>
                             <button onClick={deleteExp(obj.id)} className="del-btn">Delete</button>
                     </fieldset>
                         )
